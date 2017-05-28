@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-5-26 21:04:33 by Hibernate Tools 5.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bookStore.Domain.Indent" table="indent" catalog="bookstore" optimistic-lock="version">
+        <id name="orderid" type="string">
+            <column name="orderid" length="12" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="users" class="com.bookStore.Domain.Products" fetch="select">
+            <column name="id" not-null="true" />
+        </many-to-one>
+        <property name="uid" type="int">
+            <column name="uid" not-null="true" />
+        </property>
+        <property name="pid" type="int">
+            <column name="pid" not-null="true" />
+        </property>
+        <property name="allnumber" type="int">
+            <column name="allnumber" not-null="true" />
+        </property>
+        <property name="allvalue" type="double">
+            <column name="allvalue" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
